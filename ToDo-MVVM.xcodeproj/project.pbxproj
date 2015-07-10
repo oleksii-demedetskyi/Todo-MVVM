@@ -7,13 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4848D1611B4FBCA5000CA704 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4848D1601B4FBCA5000CA704 /* main.m */; };
-		4848D1641B4FBCA5000CA704 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4848D1631B4FBCA5000CA704 /* AppDelegate.m */; };
-		4848D1671B4FBCA5000CA704 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4848D1661B4FBCA5000CA704 /* ViewController.m */; };
-		4848D16A1B4FBCA5000CA704 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4848D1681B4FBCA5000CA704 /* Main.storyboard */; };
-		4848D16C1B4FBCA5000CA704 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4848D16B1B4FBCA5000CA704 /* Images.xcassets */; };
-		4848D16F1B4FBCA5000CA704 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4848D16D1B4FBCA5000CA704 /* LaunchScreen.xib */; };
-		4848D17B1B4FBCA5000CA704 /* ToDo_MVVMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4848D17A1B4FBCA5000CA704 /* ToDo_MVVMTests.m */; };
+		4848D18F1B4FBDC6000CA704 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4848D1851B4FBDC6000CA704 /* Images.xcassets */; };
+		4848D1901B4FBDC6000CA704 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4848D1891B4FBDC6000CA704 /* AppDelegate.m */; };
+		4848D1921B4FBDC7000CA704 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4848D18C1B4FBDC6000CA704 /* main.m */; };
+		4848D1991B4FBF38000CA704 /* ListAndItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4848D1981B4FBF38000CA704 /* ListAndItem.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,19 +24,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4848D15B1B4FBCA5000CA704 /* ToDo-MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ToDo-MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4848D15F1B4FBCA5000CA704 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4848D1601B4FBCA5000CA704 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4848D1621B4FBCA5000CA704 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		4848D1631B4FBCA5000CA704 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4848D1651B4FBCA5000CA704 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4848D1661B4FBCA5000CA704 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		4848D1691B4FBCA5000CA704 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4848D16B1B4FBCA5000CA704 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		4848D16E1B4FBCA5000CA704 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		4848D1741B4FBCA5000CA704 /* ToDo-MVVMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ToDo-MVVMTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4848D1791B4FBCA5000CA704 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4848D17A1B4FBCA5000CA704 /* ToDo_MVVMTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDo_MVVMTests.m; sourceTree = "<group>"; };
+		4848D1851B4FBDC6000CA704 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4848D1881B4FBDC6000CA704 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4848D1891B4FBDC6000CA704 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4848D18B1B4FBDC6000CA704 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4848D18C1B4FBDC6000CA704 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4848D18D1B4FBDC6000CA704 /* Tests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
+		4848D1941B4FBDD9000CA704 /* ToDo-MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ToDo-MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4848D1951B4FBDFE000CA704 /* ToDo-MVVMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ToDo-MVVMTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4848D1981B4FBF38000CA704 /* ListAndItem.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ListAndItem.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,60 +56,72 @@
 		4848D1521B4FBCA5000CA704 = {
 			isa = PBXGroup;
 			children = (
-				4848D15D1B4FBCA5000CA704 /* ToDo-MVVM */,
-				4848D1771B4FBCA5000CA704 /* ToDo-MVVMTests */,
-				4848D15C1B4FBCA5000CA704 /* Products */,
+				4848D1841B4FBDC6000CA704 /* resources */,
+				4848D1871B4FBDC6000CA704 /* sources */,
+				4848D18A1B4FBDC6000CA704 /* support */,
+				4848D18E1B4FBDC6000CA704 /* tests */,
+				4848D1941B4FBDD9000CA704 /* ToDo-MVVM.app */,
+				4848D1951B4FBDFE000CA704 /* ToDo-MVVMTests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
-		4848D15C1B4FBCA5000CA704 /* Products */ = {
+		4848D1841B4FBDC6000CA704 /* resources */ = {
 			isa = PBXGroup;
 			children = (
-				4848D15B1B4FBCA5000CA704 /* ToDo-MVVM.app */,
-				4848D1741B4FBCA5000CA704 /* ToDo-MVVMTests.xctest */,
+				4848D1851B4FBDC6000CA704 /* Images.xcassets */,
 			);
-			name = Products;
+			path = resources;
 			sourceTree = "<group>";
 		};
-		4848D15D1B4FBCA5000CA704 /* ToDo-MVVM */ = {
+		4848D1871B4FBDC6000CA704 /* sources */ = {
 			isa = PBXGroup;
 			children = (
-				4848D1621B4FBCA5000CA704 /* AppDelegate.h */,
-				4848D1631B4FBCA5000CA704 /* AppDelegate.m */,
-				4848D1651B4FBCA5000CA704 /* ViewController.h */,
-				4848D1661B4FBCA5000CA704 /* ViewController.m */,
-				4848D1681B4FBCA5000CA704 /* Main.storyboard */,
-				4848D16B1B4FBCA5000CA704 /* Images.xcassets */,
-				4848D16D1B4FBCA5000CA704 /* LaunchScreen.xib */,
-				4848D15E1B4FBCA5000CA704 /* Supporting Files */,
+				4848D19A1B4FBF8F000CA704 /* core */,
+				4848D19B1B4FBF8F000CA704 /* network */,
+				4848D19C1B4FBF8F000CA704 /* user interface */,
+				4848D1881B4FBDC6000CA704 /* AppDelegate.h */,
+				4848D1891B4FBDC6000CA704 /* AppDelegate.m */,
 			);
-			path = "ToDo-MVVM";
+			path = sources;
 			sourceTree = "<group>";
 		};
-		4848D15E1B4FBCA5000CA704 /* Supporting Files */ = {
+		4848D18A1B4FBDC6000CA704 /* support */ = {
 			isa = PBXGroup;
 			children = (
-				4848D15F1B4FBCA5000CA704 /* Info.plist */,
-				4848D1601B4FBCA5000CA704 /* main.m */,
+				4848D18B1B4FBDC6000CA704 /* Info.plist */,
+				4848D18C1B4FBDC6000CA704 /* main.m */,
+				4848D18D1B4FBDC6000CA704 /* Tests-Info.plist */,
 			);
-			name = "Supporting Files";
+			path = support;
 			sourceTree = "<group>";
 		};
-		4848D1771B4FBCA5000CA704 /* ToDo-MVVMTests */ = {
+		4848D18E1B4FBDC6000CA704 /* tests */ = {
 			isa = PBXGroup;
 			children = (
-				4848D17A1B4FBCA5000CA704 /* ToDo_MVVMTests.m */,
-				4848D1781B4FBCA5000CA704 /* Supporting Files */,
 			);
-			path = "ToDo-MVVMTests";
+			path = tests;
 			sourceTree = "<group>";
 		};
-		4848D1781B4FBCA5000CA704 /* Supporting Files */ = {
+		4848D19A1B4FBF8F000CA704 /* core */ = {
 			isa = PBXGroup;
 			children = (
-				4848D1791B4FBCA5000CA704 /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = core;
+			sourceTree = "<group>";
+		};
+		4848D19B1B4FBF8F000CA704 /* network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = network;
+			sourceTree = "<group>";
+		};
+		4848D19C1B4FBF8F000CA704 /* user interface */ = {
+			isa = PBXGroup;
+			children = (
+				4848D1981B4FBF38000CA704 /* ListAndItem.storyboard */,
+			);
+			path = "user interface";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +141,7 @@
 			);
 			name = "ToDo-MVVM";
 			productName = "ToDo-MVVM";
-			productReference = 4848D15B1B4FBCA5000CA704 /* ToDo-MVVM.app */;
+			productReference = 4848D1941B4FBDD9000CA704 /* ToDo-MVVM.app */;
 			productType = "com.apple.product-type.application";
 		};
 		4848D1731B4FBCA5000CA704 /* ToDo-MVVMTests */ = {
@@ -154,7 +159,7 @@
 			);
 			name = "ToDo-MVVMTests";
 			productName = "ToDo-MVVMTests";
-			productReference = 4848D1741B4FBCA5000CA704 /* ToDo-MVVMTests.xctest */;
+			productReference = 4848D1951B4FBDFE000CA704 /* ToDo-MVVMTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -163,6 +168,7 @@
 		4848D1531B4FBCA5000CA704 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = TDA;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = DAloG;
 				TargetAttributes = {
@@ -184,7 +190,7 @@
 				Base,
 			);
 			mainGroup = 4848D1521B4FBCA5000CA704;
-			productRefGroup = 4848D15C1B4FBCA5000CA704 /* Products */;
+			productRefGroup = 4848D1521B4FBCA5000CA704;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -199,9 +205,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4848D16A1B4FBCA5000CA704 /* Main.storyboard in Resources */,
-				4848D16F1B4FBCA5000CA704 /* LaunchScreen.xib in Resources */,
-				4848D16C1B4FBCA5000CA704 /* Images.xcassets in Resources */,
+				4848D18F1B4FBDC6000CA704 /* Images.xcassets in Resources */,
+				4848D1991B4FBF38000CA704 /* ListAndItem.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,9 +224,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4848D1671B4FBCA5000CA704 /* ViewController.m in Sources */,
-				4848D1641B4FBCA5000CA704 /* AppDelegate.m in Sources */,
-				4848D1611B4FBCA5000CA704 /* main.m in Sources */,
+				4848D1921B4FBDC7000CA704 /* main.m in Sources */,
+				4848D1901B4FBDC6000CA704 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,7 +233,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4848D17B1B4FBCA5000CA704 /* ToDo_MVVMTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,25 +245,6 @@
 			targetProxy = 4848D1751B4FBCA5000CA704 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		4848D1681B4FBCA5000CA704 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4848D1691B4FBCA5000CA704 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		4848D16D1B4FBCA5000CA704 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4848D16E1B4FBCA5000CA704 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4848D17C1B4FBCA5000CA704 /* Debug */ = {
@@ -347,7 +331,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "ToDo-MVVM/Info.plist";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "$(SRCROOT)/support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -357,7 +342,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "ToDo-MVVM/Info.plist";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "$(SRCROOT)/support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -375,7 +361,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "ToDo-MVVMTests/Info.plist";
+				INFOPLIST_FILE = "support/Tests-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ToDo-MVVM.app/ToDo-MVVM";
@@ -390,7 +376,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "ToDo-MVVMTests/Info.plist";
+				INFOPLIST_FILE = "support/Tests-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ToDo-MVVM.app/ToDo-MVVM";
