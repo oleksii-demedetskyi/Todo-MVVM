@@ -13,6 +13,8 @@
 		4848D1991B4FBF38000CA704 /* ListAndItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4848D1981B4FBF38000CA704 /* ListAndItem.storyboard */; };
 		4848D19F1B4FC4D4000CA704 /* TDAItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4848D19E1B4FC4D4000CA704 /* TDAItem.m */; };
 		4848D1A11B4FCA90000CA704 /* TDAItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4848D1A01B4FCA90000CA704 /* TDAItemTests.m */; };
+		4848D1A41B4FD648000CA704 /* TDAItemsList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4848D1A31B4FD648000CA704 /* TDAItemsList.m */; };
+		4848D1A61B4FDF11000CA704 /* TDAItemsListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4848D1A51B4FDF11000CA704 /* TDAItemsListTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,9 @@
 		4848D19D1B4FC4D4000CA704 /* TDAItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDAItem.h; sourceTree = "<group>"; };
 		4848D19E1B4FC4D4000CA704 /* TDAItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDAItem.m; sourceTree = "<group>"; };
 		4848D1A01B4FCA90000CA704 /* TDAItemTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDAItemTests.m; sourceTree = "<group>"; };
+		4848D1A21B4FD648000CA704 /* TDAItemsList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDAItemsList.h; sourceTree = "<group>"; };
+		4848D1A31B4FD648000CA704 /* TDAItemsList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDAItemsList.m; sourceTree = "<group>"; };
+		4848D1A51B4FDF11000CA704 /* TDAItemsListTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDAItemsListTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				4848D1A01B4FCA90000CA704 /* TDAItemTests.m */,
+				4848D1A51B4FDF11000CA704 /* TDAItemsListTests.m */,
 			);
 			path = tests;
 			sourceTree = "<group>";
@@ -113,6 +119,8 @@
 			children = (
 				4848D19D1B4FC4D4000CA704 /* TDAItem.h */,
 				4848D19E1B4FC4D4000CA704 /* TDAItem.m */,
+				4848D1A21B4FD648000CA704 /* TDAItemsList.h */,
+				4848D1A31B4FD648000CA704 /* TDAItemsList.m */,
 			);
 			path = core;
 			sourceTree = "<group>";
@@ -232,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4848D1A41B4FD648000CA704 /* TDAItemsList.m in Sources */,
 				4848D1921B4FBDC7000CA704 /* main.m in Sources */,
 				4848D19F1B4FC4D4000CA704 /* TDAItem.m in Sources */,
 				4848D1901B4FBDC6000CA704 /* AppDelegate.m in Sources */,
@@ -242,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4848D1A61B4FDF11000CA704 /* TDAItemsListTests.m in Sources */,
 				4848D1A11B4FCA90000CA704 /* TDAItemTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
