@@ -15,6 +15,7 @@
 		4848D1A11B4FCA90000CA704 /* TDAItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4848D1A01B4FCA90000CA704 /* TDAItemTests.m */; };
 		4848D1A41B4FD648000CA704 /* TDAItemsList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4848D1A31B4FD648000CA704 /* TDAItemsList.m */; };
 		4848D1A61B4FDF11000CA704 /* TDAItemsListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4848D1A51B4FDF11000CA704 /* TDAItemsListTests.m */; };
+		4848D1AA1B4FE95C000CA704 /* TDAItemsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4848D1A91B4FE95C000CA704 /* TDAItemsListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		4848D1A21B4FD648000CA704 /* TDAItemsList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDAItemsList.h; sourceTree = "<group>"; };
 		4848D1A31B4FD648000CA704 /* TDAItemsList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDAItemsList.m; sourceTree = "<group>"; };
 		4848D1A51B4FDF11000CA704 /* TDAItemsListTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDAItemsListTests.m; sourceTree = "<group>"; };
+		4848D1A81B4FE95C000CA704 /* TDAItemsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDAItemsListViewController.h; sourceTree = "<group>"; };
+		4848D1A91B4FE95C000CA704 /* TDAItemsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDAItemsListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,9 +138,19 @@
 		4848D19C1B4FBF8F000CA704 /* user interface */ = {
 			isa = PBXGroup;
 			children = (
+				4848D1A71B4FE943000CA704 /* items list */,
 				4848D1981B4FBF38000CA704 /* ListAndItem.storyboard */,
 			);
 			path = "user interface";
+			sourceTree = "<group>";
+		};
+		4848D1A71B4FE943000CA704 /* items list */ = {
+			isa = PBXGroup;
+			children = (
+				4848D1A81B4FE95C000CA704 /* TDAItemsListViewController.h */,
+				4848D1A91B4FE95C000CA704 /* TDAItemsListViewController.m */,
+			);
+			path = "items list";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +257,7 @@
 				4848D1921B4FBDC7000CA704 /* main.m in Sources */,
 				4848D19F1B4FC4D4000CA704 /* TDAItem.m in Sources */,
 				4848D1901B4FBDC6000CA704 /* AppDelegate.m in Sources */,
+				4848D1AA1B4FE95C000CA704 /* TDAItemsListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
