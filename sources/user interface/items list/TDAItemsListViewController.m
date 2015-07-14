@@ -7,6 +7,7 @@
 //
 
 #import "TDAItemsListViewController.h"
+#import "TDAItemsListViewModel.h"
 
 @interface TDAItemsListViewController ()
 
@@ -16,34 +17,42 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 5;
+    return self.viewModel.itemGroups.count;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return @"test";
+    TDAItemsListGroupViewModel* group = self.viewModel.itemGroups[section];
+    return group.title;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    TDAItemsListGroupViewModel* group = self.viewModel.itemGroups[section];
+    return group.items.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"com.itemslist.cell" forIndexPath:indexPath];
+    TDAItemsListGroupViewModel* group = self.viewModel.itemGroups[indexPath.section];
+    TDAItemsListItemViewModel* item = group.items[indexPath.row];
     
-    cell.textLabel.text = @"Example Example Example";
-    cell.detailTextLabel.text = @"Today";
-    cell.imageView.hidden = (indexPath.row % 3 != 0);
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"com.itemslist.cell" forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    cell.textLabel.text = item.title;
+    cell.detailTextLabel.text = item.dueTitle;
+    cell.imageView.hidden = !item.isChecked;
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"selecet at %@", indexPath);
+    TDAItemsListGroupViewModel* group = self.viewModel.itemGroups[indexPath.section];
+    TDAItemsListItemViewModel* item = group.items[indexPath.row];
+
+    [item select];
 }
 
 @end

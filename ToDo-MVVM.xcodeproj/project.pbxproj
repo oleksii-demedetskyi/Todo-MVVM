@@ -16,6 +16,7 @@
 		4848D1A41B4FD648000CA704 /* TDAItemsList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4848D1A31B4FD648000CA704 /* TDAItemsList.m */; };
 		4848D1A61B4FDF11000CA704 /* TDAItemsListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4848D1A51B4FDF11000CA704 /* TDAItemsListTests.m */; };
 		4848D1AA1B4FE95C000CA704 /* TDAItemsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4848D1A91B4FE95C000CA704 /* TDAItemsListViewController.m */; };
+		4848D1B01B559B5B000CA704 /* TDAItemsListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4848D1AF1B559B5B000CA704 /* TDAItemsListViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,8 @@
 		4848D1A51B4FDF11000CA704 /* TDAItemsListTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDAItemsListTests.m; sourceTree = "<group>"; };
 		4848D1A81B4FE95C000CA704 /* TDAItemsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDAItemsListViewController.h; sourceTree = "<group>"; };
 		4848D1A91B4FE95C000CA704 /* TDAItemsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDAItemsListViewController.m; sourceTree = "<group>"; };
+		4848D1AE1B559B5B000CA704 /* TDAItemsListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDAItemsListViewModel.h; sourceTree = "<group>"; };
+		4848D1AF1B559B5B000CA704 /* TDAItemsListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDAItemsListViewModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +152,8 @@
 			children = (
 				4848D1A81B4FE95C000CA704 /* TDAItemsListViewController.h */,
 				4848D1A91B4FE95C000CA704 /* TDAItemsListViewController.m */,
+				4848D1AE1B559B5B000CA704 /* TDAItemsListViewModel.h */,
+				4848D1AF1B559B5B000CA704 /* TDAItemsListViewModel.m */,
 			);
 			path = "items list";
 			sourceTree = "<group>";
@@ -254,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4848D1A41B4FD648000CA704 /* TDAItemsList.m in Sources */,
+				4848D1B01B559B5B000CA704 /* TDAItemsListViewModel.m in Sources */,
 				4848D1921B4FBDC7000CA704 /* main.m in Sources */,
 				4848D19F1B4FC4D4000CA704 /* TDAItem.m in Sources */,
 				4848D1901B4FBDC6000CA704 /* AppDelegate.m in Sources */,

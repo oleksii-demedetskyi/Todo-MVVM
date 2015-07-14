@@ -45,13 +45,13 @@
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="MVVM TODO" id="Ts0-UT-gf1">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="5pH-Af-Tfm">
-                            <color key="tintColor" red="1" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="MVVM TODO" id="Ts0-UT-gf1"/>
+                    <connections>
+                        <outlet property="viewModel" destination="xpq-eG-Jxh" id="Hci-Hd-nGj"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7DU-hD-9nE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="xpq-eG-Jxh" customClass="TDAItemsListViewModel"/>
             </objects>
             <point key="canvasLocation" x="530" y="346"/>
         </scene>

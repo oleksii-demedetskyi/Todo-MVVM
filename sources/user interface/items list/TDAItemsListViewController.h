@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@class TDAItemsListViewModel;
 @interface TDAItemsListViewController : UITableViewController
+
+@property (nonatomic, strong) IBOutlet TDAItemsListViewModel* viewModel;
 
 @end
