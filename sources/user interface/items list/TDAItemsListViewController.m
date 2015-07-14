@@ -9,7 +9,36 @@
 #import "TDAItemsListViewController.h"
 #import "TDAItemsListViewModel.h"
 
+#import <ReactiveCocoa/ReactiveCocoa.h>
 @interface TDAItemsListViewController ()
+
+@end
+
+@interface TDAItemsListItemCell : UITableViewCell
+
+@property (nonatomic, strong) TDAItemsListItemViewModel* viewModel;
+
+@end
+
+@implementation TDAItemsListItemCell
+
+- (void)prepareForReuse
+{
+    self.viewModel = nil;
+}
+
+- (void)setupBindings
+{
+    RAC(self, textLabel.text) = RACObserve(self, viewModel.title);
+    RAC(self, detailTextLabel.text) = RACObserve(self, viewModel.dueTitle);
+    RAC(self, imageView.hidden) = [[RACObserve(self, viewModel.isChecked) ignore:nil] not];
+}
+
+- (void)awakeFromNib
+{
+    [self setupBindings];
+    [super awakeFromNib];
+}
 
 @end
 
@@ -37,12 +66,9 @@
     TDAItemsListGroupViewModel* group = self.viewModel.itemGroups[indexPath.section];
     TDAItemsListItemViewModel* item = group.items[indexPath.row];
     
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"com.itemslist.cell" forIndexPath:indexPath];
+    TDAItemsListItemCell* cell = [tableView dequeueReusableCellWithIdentifier:@"com.itemslist.cell" forIndexPath:indexPath];
+    cell.viewModel = item;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
-    cell.textLabel.text = item.title;
-    cell.detailTextLabel.text = item.dueTitle;
-    cell.imageView.hidden = !item.isChecked;
     
     return cell;
 }

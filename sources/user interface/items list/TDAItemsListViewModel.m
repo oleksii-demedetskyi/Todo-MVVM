@@ -108,7 +108,7 @@ typedef void(^StateBlock)(id self);
 
 - (void)select
 {
-    NSLog(@"Select item: %@", self);
+    self.isChecked = !self.isChecked;
 }
 
 @end
