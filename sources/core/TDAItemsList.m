@@ -17,9 +17,9 @@
 
 @implementation TDAItemsList
 
-- (void)addItemWithTitle:(NSString *)title
+- (void)addItemWithTitle:(NSString *)title dueDate:(NSDate*)date;
 {
-    TDAItem* item = [TDAItem newWithTitile:title];
+    TDAItem* item = [TDAItem newWithTitile:title dueDate:date];
     self.items = [(self.items ?: @[]) arrayByAddingObject:item];
 }
 

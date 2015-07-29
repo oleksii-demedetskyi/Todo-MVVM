@@ -12,6 +12,6 @@
 
 @property (readonly) NSArray* items;
 
-- (void)addItemWithTitle:(NSString*)title;
+- (void)addItemWithTitle:(NSString *)title dueDate:(NSDate*)date;
 
 @end

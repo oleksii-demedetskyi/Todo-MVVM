@@ -14,10 +14,11 @@
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
 
-+ (instancetype)newWithTitile:(NSString*)title;
++ (instancetype)newWithTitile:(NSString*)title dueDate:(NSDate*)date;
 
 @property (readonly) TDAItemStatus* status;
 @property (readonly) NSString* title;
+@property (readonly) NSDate* dueDate;
 
 - (void)markAsDone;
 - (void)markAsUndone;

@@ -19,21 +19,21 @@
 
 - (void)testStatusOfNewItem
 {
-    TDAItem* item = [TDAItem newWithTitile:@""];
+    TDAItem* item = [TDAItem newWithTitile:@"" dueDate:nil];
     
     XCTAssertTrue(item.status.isUndone);
 }
 
 - (void)testTitleMatch
 {
-    TDAItem* item = [TDAItem newWithTitile:@"example"];
+    TDAItem* item = [TDAItem newWithTitile:@"example" dueDate:nil];
     
     XCTAssertEqualObjects(item.title, @"example");
 }
 
 - (void)testStatusChangeToDone
 {
-    TDAItem* item = [TDAItem newWithTitile:@""];
+    TDAItem* item = [TDAItem newWithTitile:@"" dueDate:nil];
     [item markAsDone];
     
     XCTAssertTrue(item.status.isDone);
@@ -41,7 +41,7 @@
 
 - (void)testStatusChangeToUndone
 {
-    TDAItem* item = [TDAItem newWithTitile:@""];
+    TDAItem* item = [TDAItem newWithTitile:@"" dueDate:nil];
     [item markAsDone];
     [item markAsUndone];
     

@@ -11,18 +11,19 @@
 @interface TDAItem ()
 
 @property NSString* title;
+@property NSDate* dueDate;
 @property TDAItemStatus* status;
 
 @end
 
 @implementation TDAItem
 
-+ (instancetype)newWithTitile:(NSString *)title
++ (instancetype)newWithTitile:(NSString *)title dueDate:(NSDate *)date
 {
-    return [[self alloc] initWithTitle:title];
+    return [[self alloc] initWithTitle:title dueDate:date];
 }
 
-- (instancetype)initWithTitle:(NSString *)title
+- (instancetype)initWithTitle:(NSString *)title dueDate:(NSDate *)date
 {
     self = [super init];
     

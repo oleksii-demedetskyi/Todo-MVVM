@@ -28,7 +28,7 @@
 - (void)testAddingItem
 {
     TDAItemsList* list = [TDAItemsList new];
-    [list addItemWithTitle:@""];
+    [list addItemWithTitle:@"" dueDate:nil];
     
     XCTAssertEqual(list.items.count, 1);
 }
@@ -36,7 +36,7 @@
 - (void)testAddedItem
 {
     TDAItemsList* list = [TDAItemsList new];
-    [list addItemWithTitle:@"test"];
+    [list addItemWithTitle:@"test" dueDate:nil];
     
     TDAItem* item = list.items[0];
     XCTAssertEqualObjects(item.title, @"test");
@@ -46,8 +46,8 @@
 - (void)testAddingOrded
 {
     TDAItemsList* list = [TDAItemsList new];
-    [list addItemWithTitle:@"first"];
-    [list addItemWithTitle:@"second"];
+    [list addItemWithTitle:@"first" dueDate:nil];
+    [list addItemWithTitle:@"second" dueDate:nil];
     
     NSArray* titles = [list.items valueForKey:@"title"];
     NSArray* expectedTitles = @[@"first", @"second"];
