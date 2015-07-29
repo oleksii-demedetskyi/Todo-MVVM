@@ -8,9 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+@class TDANewItemViewModel;
 @interface TDAItemsListViewModel : NSObject
 
 @property (nonatomic, readonly) NSArray* itemGroups;
+
+- (TDANewItemViewModel*)viewModelForNewItem;
 
 @end
 
@@ -21,7 +24,6 @@
 @property (nonatomic, readonly) NSArray* items;
 
 @end
-
 
 @interface TDAItemsListItemViewModel : NSObject
 

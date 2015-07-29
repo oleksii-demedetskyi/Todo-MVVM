@@ -9,6 +9,8 @@
 #import "TDAItemsListViewController.h"
 #import "TDAItemsListViewModel.h"
 
+#import "TDANewItemViewController.h"
+
 #import <ReactiveCocoa/ReactiveCocoa.h>
 @interface TDAItemsListViewController ()
 
@@ -43,6 +45,12 @@
 @end
 
 @implementation TDAItemsListViewController
+
+- (void)viewDidLoad
+{
+    [self.tableView rac_liftSelector:@selector(reloadData)
+               withSignalOfArguments:[RACObserve(self, viewModel.itemGroups) mapReplace:[RACTuple new]]];
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -79,6 +87,15 @@
     TDAItemsListItemViewModel* item = group.items[indexPath.row];
 
     [item select];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"add new item"]) {
+        UINavigationController* n = segue.destinationViewController;
+        TDANewItemViewController* newItemVC = n.viewControllers.firstObject;
+        newItemVC.viewModel = [self.viewModel viewModelForNewItem];
+    }
 }
 
 @end

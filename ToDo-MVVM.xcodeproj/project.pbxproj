@@ -18,6 +18,12 @@
 		4848D1A61B4FDF11000CA704 /* TDAItemsListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4848D1A51B4FDF11000CA704 /* TDAItemsListTests.m */; };
 		4848D1AA1B4FE95C000CA704 /* TDAItemsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4848D1A91B4FE95C000CA704 /* TDAItemsListViewController.m */; };
 		4848D1B01B559B5B000CA704 /* TDAItemsListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4848D1AF1B559B5B000CA704 /* TDAItemsListViewModel.m */; };
+		4898EF7F1B69087F00CF2BC1 /* TDADateRangeDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 4898EF7E1B69087F00CF2BC1 /* TDADateRangeDetector.m */; };
+		4898EF811B690FBF00CF2BC1 /* TDADateRangeDetectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4898EF801B690FBF00CF2BC1 /* TDADateRangeDetectorTests.m */; };
+		4898EF841B69557700CF2BC1 /* TDADateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4898EF831B69557700CF2BC1 /* TDADateFormatter.m */; };
+		4898EF881B69800400CF2BC1 /* TDANewItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4898EF871B69800400CF2BC1 /* TDANewItemViewController.m */; };
+		4898EF8B1B69801000CF2BC1 /* TDANewItemViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4898EF8A1B69801000CF2BC1 /* TDANewItemViewModel.m */; };
+		4898EF8E1B69888100CF2BC1 /* TDADateRangeFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4898EF8D1B69888100CF2BC1 /* TDADateRangeFormatter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,17 @@
 		4848D1A91B4FE95C000CA704 /* TDAItemsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDAItemsListViewController.m; sourceTree = "<group>"; };
 		4848D1AE1B559B5B000CA704 /* TDAItemsListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDAItemsListViewModel.h; sourceTree = "<group>"; };
 		4848D1AF1B559B5B000CA704 /* TDAItemsListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDAItemsListViewModel.m; sourceTree = "<group>"; };
+		4898EF7D1B69087F00CF2BC1 /* TDADateRangeDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDADateRangeDetector.h; sourceTree = "<group>"; };
+		4898EF7E1B69087F00CF2BC1 /* TDADateRangeDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDADateRangeDetector.m; sourceTree = "<group>"; };
+		4898EF801B690FBF00CF2BC1 /* TDADateRangeDetectorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDADateRangeDetectorTests.m; sourceTree = "<group>"; };
+		4898EF821B69557700CF2BC1 /* TDADateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDADateFormatter.h; sourceTree = "<group>"; };
+		4898EF831B69557700CF2BC1 /* TDADateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDADateFormatter.m; sourceTree = "<group>"; };
+		4898EF861B69800400CF2BC1 /* TDANewItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDANewItemViewController.h; sourceTree = "<group>"; };
+		4898EF871B69800400CF2BC1 /* TDANewItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDANewItemViewController.m; sourceTree = "<group>"; };
+		4898EF891B69801000CF2BC1 /* TDANewItemViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDANewItemViewModel.h; sourceTree = "<group>"; };
+		4898EF8A1B69801000CF2BC1 /* TDANewItemViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDANewItemViewModel.m; sourceTree = "<group>"; };
+		4898EF8C1B69888100CF2BC1 /* TDADateRangeFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDADateRangeFormatter.h; sourceTree = "<group>"; };
+		4898EF8D1B69888100CF2BC1 /* TDADateRangeFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDADateRangeFormatter.m; sourceTree = "<group>"; };
 		D9F4FDF18BFA7535ADC38D76 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDFA7F3A6A396450B3928CAA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "external/Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,6 +149,7 @@
 			children = (
 				4848D1A01B4FCA90000CA704 /* TDAItemTests.m */,
 				4848D1A51B4FDF11000CA704 /* TDAItemsListTests.m */,
+				4898EF801B690FBF00CF2BC1 /* TDADateRangeDetectorTests.m */,
 			);
 			path = tests;
 			sourceTree = "<group>";
@@ -157,6 +175,7 @@
 		4848D19C1B4FBF8F000CA704 /* user interface */ = {
 			isa = PBXGroup;
 			children = (
+				4898EF851B697FDF00CF2BC1 /* add new item */,
 				4848D1A71B4FE943000CA704 /* items list */,
 				4848D1981B4FBF38000CA704 /* ListAndItem.storyboard */,
 			);
@@ -170,8 +189,25 @@
 				4848D1A91B4FE95C000CA704 /* TDAItemsListViewController.m */,
 				4848D1AE1B559B5B000CA704 /* TDAItemsListViewModel.h */,
 				4848D1AF1B559B5B000CA704 /* TDAItemsListViewModel.m */,
+				4898EF7D1B69087F00CF2BC1 /* TDADateRangeDetector.h */,
+				4898EF7E1B69087F00CF2BC1 /* TDADateRangeDetector.m */,
+				4898EF821B69557700CF2BC1 /* TDADateFormatter.h */,
+				4898EF831B69557700CF2BC1 /* TDADateFormatter.m */,
+				4898EF8C1B69888100CF2BC1 /* TDADateRangeFormatter.h */,
+				4898EF8D1B69888100CF2BC1 /* TDADateRangeFormatter.m */,
 			);
 			path = "items list";
+			sourceTree = "<group>";
+		};
+		4898EF851B697FDF00CF2BC1 /* add new item */ = {
+			isa = PBXGroup;
+			children = (
+				4898EF861B69800400CF2BC1 /* TDANewItemViewController.h */,
+				4898EF871B69800400CF2BC1 /* TDANewItemViewController.m */,
+				4898EF891B69801000CF2BC1 /* TDANewItemViewModel.h */,
+				4898EF8A1B69801000CF2BC1 /* TDANewItemViewModel.m */,
+			);
+			path = "add new item";
 			sourceTree = "<group>";
 		};
 		C4DB3A5CBF52B83913ABA296 /* Frameworks */ = {
@@ -317,12 +353,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4898EF841B69557700CF2BC1 /* TDADateFormatter.m in Sources */,
 				4848D1A41B4FD648000CA704 /* TDAItemsList.m in Sources */,
 				4848D1B01B559B5B000CA704 /* TDAItemsListViewModel.m in Sources */,
 				4848D1921B4FBDC7000CA704 /* main.m in Sources */,
+				4898EF8B1B69801000CF2BC1 /* TDANewItemViewModel.m in Sources */,
 				4848D19F1B4FC4D4000CA704 /* TDAItem.m in Sources */,
+				4898EF8E1B69888100CF2BC1 /* TDADateRangeFormatter.m in Sources */,
 				4848D1901B4FBDC6000CA704 /* AppDelegate.m in Sources */,
+				4898EF7F1B69087F00CF2BC1 /* TDADateRangeDetector.m in Sources */,
 				4848D1AA1B4FE95C000CA704 /* TDAItemsListViewController.m in Sources */,
+				4898EF881B69800400CF2BC1 /* TDANewItemViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4898EF811B690FBF00CF2BC1 /* TDADateRangeDetectorTests.m in Sources */,
 				4848D1A61B4FDF11000CA704 /* TDAItemsListTests.m in Sources */,
 				4848D1A11B4FCA90000CA704 /* TDAItemTests.m in Sources */,
 			);

@@ -28,6 +28,7 @@
     self = [super init];
     
     self.title = title;
+    self.dueDate = date;
     self.status = [TDAItemStatus undoneStatus];
     
     return self;

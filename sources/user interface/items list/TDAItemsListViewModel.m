@@ -6,7 +6,20 @@
 //  Copyright (c) 2015 DAloG. All rights reserved.
 //
 
+
 #import "TDAItemsListViewModel.h"
+
+#import "TDADateRangeDetector.h"
+#import "TDADateRangeFormatter.h"
+#import "TDADateFormatter.h"
+
+#import "TDANewItemViewModel.h"
+
+#import <ReactiveCocoa/ReactiveCocoa.h>
+
+#include "TDAItemsList.h"
+#include "TDAItem.h"
+
 
 @interface TDAItemsListViewModel()
 
@@ -18,6 +31,13 @@
 
 @property (nonatomic) NSString* title;
 @property (nonatomic) NSArray* items;
+
+@end
+
+@interface TDAItemsListItemViewModel ()
+
+@property (nonatomic, strong) NSString* dueTitle;
+@property (nonatomic, strong) TDAItem* item;
 
 @end
 
@@ -43,8 +63,6 @@ typedef void(^StateBlock)(id self);
 
 @end
 
-#include "TDAItemsList.h"
-
 @interface TDAItemsListViewModel ()
 
 @property (nonatomic, strong) TDAItemsList* itemsList;
@@ -57,8 +75,64 @@ typedef void(^StateBlock)(id self);
 {
     return [self newWithState:^(TDAItemsListViewModel* self) {
         self.itemsList = itemsList;
-        // TODO: Map items signal to list of groups
+        [self rac_liftSelector:@selector(updateGroupsFromItems:) withSignals:RACObserve(self, itemsList.items).logAll, nil];
     }];
+}
+
+- (void)updateGroupsFromItems:(NSArray*)itemsList
+{
+    NSDictionary* itemGroupMap =
+    @{ @(TDADateRangeDetectorPast)      : [NSMutableArray array],
+       @(TDADateRangeDetectorToday)     : [NSMutableArray array],
+       @(TDADateRangeDetectorTomorrow)  : [NSMutableArray array],
+       @(TDADateRangeDetectorThisWeek)  : [NSMutableArray array],
+       @(TDADateRangeDetectorNextWeek)  : [NSMutableArray array],
+       @(TDADateRangeDetectorThisMonth) : [NSMutableArray array],
+       @(TDADateRangeDetectorNextMonth) : [NSMutableArray array],
+       @(TDADateRangeDetectorThisYear)  : [NSMutableArray array],
+       @(TDADateRangeDetectorNextYear)  : [NSMutableArray array],
+       @(TDADateRangeDetectorFarFarAway): [NSMutableArray array], };
+    
+    // Move items to groups
+    for (TDAItem* item in itemsList) {
+        TDADateRangeDetectorResult range = [TDADateRangeDetector rangeOfDate:item.dueDate relativeToDate:[NSDate date]];
+        NSMutableArray* itemGroup = itemGroupMap[@(range)];
+        
+        [itemGroup addObject:item];
+    }
+    
+    
+    NSMutableArray* groups = [NSMutableArray new];
+    void(^appendGroupForResult)(TDADateRangeDetectorResult) = ^(TDADateRangeDetectorResult range) {
+        NSArray* items = [itemGroupMap[@(range)] copy];
+        if (items.count == 0) return;
+        
+        TDAItemsListGroupViewModel* groupViewModel = [TDAItemsListGroupViewModel new];
+        groupViewModel.title = [TDADateRangeFormatter formatRange:range];
+        groupViewModel.items = [items.rac_sequence map:^TDAItemsListItemViewModel*(TDAItem* item) {
+            
+            TDAItemsListItemViewModel* itemViewModel = [TDAItemsListItemViewModel new];
+            itemViewModel.item = item;
+            itemViewModel.dueTitle = [TDADateFormatter formatDate:item.dueDate forRange:range];
+            return itemViewModel;
+            
+        }].array;
+        
+        [groups addObject:groupViewModel];
+    };
+    
+    appendGroupForResult(TDADateRangeDetectorPast);
+    appendGroupForResult(TDADateRangeDetectorToday);
+    appendGroupForResult(TDADateRangeDetectorTomorrow);
+    appendGroupForResult(TDADateRangeDetectorThisWeek);
+    appendGroupForResult(TDADateRangeDetectorNextWeek);
+    appendGroupForResult(TDADateRangeDetectorThisMonth);
+    appendGroupForResult(TDADateRangeDetectorNextMonth);
+    appendGroupForResult(TDADateRangeDetectorThisYear);
+    appendGroupForResult(TDADateRangeDetectorNextYear);
+    appendGroupForResult(TDADateRangeDetectorFarFarAway);
+    
+    self.itemGroups = groups.copy;
 }
 
 - (id)awakeAfterUsingCoder:(NSCoder *)aDecoder
@@ -70,14 +144,19 @@ typedef void(^StateBlock)(id self);
 {
     TDAItemsList* list = [TDAItemsList new];
     
-    [list addItemWithTitle:@"Buy a milk" dueDate:nil];
-    [list addItemWithTitle:@"Send a very important mail to customer" dueDate:nil];
-    [list addItemWithTitle:@"Check this first" dueDate:nil];
+    [list addItemWithTitle:@"Buy a milk" dueDate:[NSDate date]];
+    [list addItemWithTitle:@"Send a very important mail to customer" dueDate:[NSDate date]];
+    [list addItemWithTitle:@"Check this first" dueDate:[NSDate date]];
     
-    [list addItemWithTitle:@"Write an Osmoms lib" dueDate:nil];
+    [list addItemWithTitle:@"Write an Osmoms lib" dueDate:[NSDate date]];
     [list addItemWithTitle:@"Complete Witcher quest" dueDate:nil];
     
     return [TDAItemsListViewModel newWithItemsList:list];
+}
+
+- (TDANewItemViewModel *)viewModelForNewItem
+{
+    return [TDANewItemViewModel newWithItemList:self.itemsList];
 }
 
 @end
@@ -85,23 +164,7 @@ typedef void(^StateBlock)(id self);
 @implementation TDAItemsListGroupViewModel
 @end
 
-
-#import "TDAItem.h"
-
-@interface TDAItemsListItemViewModel ()
-
-@property (nonatomic, strong) TDAItem* item;
-
-@end
-
 @implementation TDAItemsListItemViewModel
-
-+ (instancetype)newWithItem:(TDAItem*)item;
-{
-    return [self newWithState:^(TDAItemsListItemViewModel* self) {
-        self.item = item;
-    }];
-}
 
 - (void)select
 {
@@ -135,12 +198,6 @@ typedef void(^StateBlock)(id self);
 + (NSSet *)keyPathsForValuesAffectingDueTitle
 {
     return [NSSet setWithObject:@"item.dueDate"];
-}
-
-- (NSString *)dueTitle
-{
-    // TODO: Add formatter
-    return @"date";
 }
 
 @end
