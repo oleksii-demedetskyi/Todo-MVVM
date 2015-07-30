@@ -16,7 +16,6 @@
 @property (nonatomic) IBOutlet UITextField* titleTextField;
 @property (nonatomic) IBOutlet UIDatePicker* timePicker;
 @property (nonatomic) IBOutlet UILabel* timeLabel;
-@property (nonatomic) IBOutlet UILabel* rangeLabel;
 
 @property (nonatomic) IBOutlet UIBarButtonItem* saveItemButton;
 
@@ -34,14 +33,26 @@
     RAC(self, timeLabel.text) =
     RACObserve(self, viewModel.dateDescription).distinctUntilChanged.deliverOnMainThread;
     
-    RAC(self, rangeLabel.text) =
-    RACObserve(self, viewModel.rangeDescription).distinctUntilChanged.deliverOnMainThread;
+    [self rac_liftSelector:@selector(updateRangeTitleSection) withSignalOfArguments:
+     [RACObserve(self, viewModel.rangeDescription).distinctUntilChanged.deliverOnMainThread mapReplace:[RACTuple new]]];
     
     RAC(self, timePicker.date) =
     [RACObserve(self, viewModel.date) ignore:nil].distinctUntilChanged.deliverOnMainThread;
     
     RAC(self, saveItemButton.enabled, @NO) =
     RACObserve(self, viewModel.canSave).distinctUntilChanged.deliverOnMainThread;
+}
+
+- (void)updateRangeTitleSection
+{
+    UIView* headerView = [self.tableView headerViewForSection:0];
+    [headerView setValue:self.viewModel.rangeDescription.uppercaseString
+              forKeyPath:@"label.text"];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return self.viewModel.rangeDescription;
 }
 
 - (IBAction)cancel

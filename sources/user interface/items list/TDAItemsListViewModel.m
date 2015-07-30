@@ -76,7 +76,7 @@ typedef void(^StateBlock)(id self);
 {
     return [self newWithState:^(TDAItemsListViewModel* self) {
         self.itemsList = itemsList;
-        [self rac_liftSelector:@selector(updateGroupsFromItems:) withSignals:RACObserve(self, itemsList.items).logAll, nil];
+        [self rac_liftSelector:@selector(updateGroupsFromItems:) withSignals:RACObserve(self, itemsList.items), nil];
         
         RAC(self, canEditItems) = [RACObserve(self, itemGroups) map:^id(NSArray* value) {
             return @(value.count != 0);
