@@ -1,0 +1,65 @@
+@startuml
+
+class ItemListViewModel {
+	itemGroups: [ItemListGroupViewModel*]
+}
+
+class ItemListGroupViewModel {
+	title: NSString*
+	items: [ItemListItemViewModel*]
+}
+
+class ItemListItemViewModel {
+	title: NSString*
+	dueTitle: NSString*
+	isChecked: BOOL
+
+	select -> ()
+}
+
+ItemListViewModel o- ItemListGroupViewModel
+ItemListGroupViewModel o- ItemListItemViewModel
+
+@enduml
+
+@startuml private
+
+!include lockListViewModel.pu
+
+hide ItemListGroupViewModel
+hide ItemListItemViewModel
+
+enum DateRangeDetectorResult {
+	Past, Today, Tommorow,
+	ThisWeek, NextWeek, ThisMonth, NextMonth,
+	ThisYear, NextYear, FarAway
+}
+
+class DateRangeDetector {
+	rangeOfDate:(NSDate*)taskDate relativeToDate:(NSDate*)currentDate -> (DateRangeDetectorResult)
+}
+
+class DateFormatter {
+	formatDate:(NSDate*)date forDayRange -> (NSString*)
+	formatDate:(NSDate*)date forWeekRange -> (NSString*)
+	formatDate:(NSDate*)date forMonthRange -> (NSString*)
+	formatDate:(NSDate*)date forYearRange -> (NSString*)
+
+	formatDate:(NSDate*)date forRange:(DateRangeDetectorResult) -> (NSString*)
+}
+
+class DateRangeFormatter {
+	formatRange:(DateRangeDetectorResult) -> (NSString*)
+}
+
+DateRangeDetector --> DateRangeDetectorResult
+
+class ItemListViewModel {
+	updateGroupsForItems: ([Item*]) -> ()
+}
+
+ItemListViewModel --> DateRangeDetector
+ItemListViewModel --> DateFormatter
+ItemListViewModel --> DateRangeFormatter
+
+@enduml

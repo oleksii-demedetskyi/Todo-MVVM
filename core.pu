@@ -1,0 +1,71 @@
+@startuml
+
+package View {
+	class ItemListViewController {
+		viewModel: ItemListViewModel*
+	}
+}
+
+package ViewModel {
+	!include lockListViewModel.pu
+}
+
+package Model {
+	class ItemList {
+		items: [Item*]
+
+		addItemWithTitle:(NSString*)title -> ()
+	}
+
+	class Item {
+	  title: NSString*
+	  dueDate: NSDate*
+	  status: ItemStatus*
+
+	  markAsDone -> ();
+	  markAsUndone -> ();
+	}
+
+	class ItemStatus {
+	 	isDone: BOOL
+	 	isUndone: BOOL
+	}
+
+	ItemList o- Item
+	Item o- ItemStatus
+}
+
+ItemListViewModel o-- ItemList
+ItemListItemViewModel o-- Item
+
+ItemListViewController o-- ItemListViewModel
+
+package View {
+	class NewItemViewController {
+		viewModel: NewItemViewModel*
+	}
+}
+
+package ViewModel {
+	class NewItemViewModel {
+		canSaveItem: BOOL
+		titleText: NSString*
+		date: NSDate*
+		rangeDescription: NSString*
+		dateDescription: NSString*
+
+		updateTitle: (NSString*)title -> ()
+		updateDate: (NSDate*)date -> ()
+
+		save -> ()
+		cancel -> ()
+	}
+}
+
+NewItemViewController o-- NewItemViewModel
+NewItemViewModel o-- ItemList
+
+NewItemViewController <- ItemListViewController : "set view model"
+NewItemViewModel <- ItemListViewModel : "create"
+
+@enduml

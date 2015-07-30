@@ -1,0 +1,23 @@
+@startuml
+
+!include core.pu
+
+
+class ApplicationSetup {
+	setupApplicationInWindow: (UIWindow*)window -> ()
+}
+
+ApplicationSetup -r-> ItemList : "create"
+ApplicationSetup -r-> ItemListViewModel : "create"
+ApplicationSetup -r-> ItemListViewController : "create"
+
+hide Item
+hide ItemStatus
+
+hide NewItemViewController
+hide NewItemViewModel
+
+hide ItemListGroupViewModel
+hide ItemListItemViewModel
+
+@enduml
