@@ -13,19 +13,16 @@
 
 + (NSString*)formatRange:(TDADateRangeDetectorResult)range;
 {
-    NSDictionary* titleMap =
-    @{ @(TDADateRangeDetectorPast)      : @"Missed",
-       @(TDADateRangeDetectorToday)     : @"Today",
-       @(TDADateRangeDetectorTomorrow)  : @"Tomorrow",
-       @(TDADateRangeDetectorThisWeek)  : @"This week",
-       @(TDADateRangeDetectorNextWeek)  : @"Next week",
-       @(TDADateRangeDetectorThisMonth) : @"This month",
-       @(TDADateRangeDetectorNextMonth) : @"Next month",
-       @(TDADateRangeDetectorThisYear)  : @"This year",
-       @(TDADateRangeDetectorNextYear)  : @"Next year",
-       @(TDADateRangeDetectorFarFarAway): @"Someday" };
-
-    return titleMap[@(range)];
+    return [switch_(range) past:@"Missed"
+                          today:@"Today"
+                       tomorrow:@"Tomorrow"
+                       thisWeek:@"This week"
+                       nextWeek:@"Next week"
+                      thisMonth:@"This month"
+                      nextMonth:@"Next month"
+                       thisYear:@"This year"
+                       nextYear:@"Next year"
+                        farAway:@"Someday"];
 }
 
 @end

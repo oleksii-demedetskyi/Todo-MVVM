@@ -29,7 +29,8 @@
 - (instancetype)init
 {
     RACSignal* dateIsValid = [RACObserve(self, date) map:^NSNumber*(NSDate* date) {
-        return @(date != [date earlierDate:[NSDate date]]);
+        return @([TDADateRangeDetector rangeOfDate:date relativeToDate:[NSDate date]] !=
+                TDADateRangeDetectorPast);
     }];
     
     RACSignal* hasTitle = [RACObserve(self, title) map:^NSNumber*(NSString* title) {

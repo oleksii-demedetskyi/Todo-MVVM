@@ -46,5 +46,44 @@
     return TDADateRangeDetectorFarFarAway;
 }
 
+@end
+
+@interface TDADateRangeDetectorResultSwitch : NSObject<TDADateRangeDetectorSwitch>
+@property TDADateRangeDetectorResult result;
+@end
+
+@implementation TDADateRangeDetectorResultSwitch
+
+- (id)past:(id)pastValue
+     today:(id)todayValue
+  tomorrow:(id)tomorrowValue
+  thisWeek:(id)thisWeekValue
+  nextWeek:(id)nextWeekValue
+ thisMonth:(id)thisMonthValue
+ nextMonth:(id)nextMonthValue
+  thisYear:(id)thisYearValue
+  nextYear:(id)nextYearValue
+   farAway:(id)farAwayValue
+{
+    if (self.result == TDADateRangeDetectorPast) return pastValue;
+    if (self.result == TDADateRangeDetectorToday) return todayValue;
+    if (self.result == TDADateRangeDetectorTomorrow) return tomorrowValue;
+    if (self.result == TDADateRangeDetectorThisWeek) return thisWeekValue;
+    if (self.result == TDADateRangeDetectorNextWeek) return nextWeekValue;
+    if (self.result == TDADateRangeDetectorThisMonth) return thisMonthValue;
+    if (self.result == TDADateRangeDetectorNextMonth) return nextMonthValue;
+    if (self.result == TDADateRangeDetectorThisYear) return thisYearValue;
+    if (self.result == TDADateRangeDetectorNextYear) return nextYearValue;
+    if (self.result == TDADateRangeDetectorFarFarAway) return farAwayValue;
+    
+    return nil;
+}
 
 @end
+
+id<TDADateRangeDetectorSwitch> switch_(TDADateRangeDetectorResult range) {
+    TDADateRangeDetectorResultSwitch* switchObject = [TDADateRangeDetectorResultSwitch new];
+    switchObject.result = range;
+    
+    return switchObject;
+}

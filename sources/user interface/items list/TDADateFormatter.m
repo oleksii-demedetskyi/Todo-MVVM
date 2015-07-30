@@ -12,19 +12,18 @@
 
 + (NSString *)formatDate:(NSDate*)date forRange:(TDADateRangeDetectorResult)range
 {
-    NSDictionary* formatterMap =
-    @{ @(TDADateRangeDetectorPast)      : ^{ return @""; },
-       @(TDADateRangeDetectorToday)     : ^{ return [TDADateFormatter formatDateForDayRange:date];   },
-       @(TDADateRangeDetectorTomorrow)  : ^{ return [TDADateFormatter formatDateForDayRange:date];   },
-       @(TDADateRangeDetectorThisWeek)  : ^{ return [TDADateFormatter formatDateForWeekRange:date];  },
-       @(TDADateRangeDetectorNextWeek)  : ^{ return [TDADateFormatter formatDateForWeekRange:date];  },
-       @(TDADateRangeDetectorThisMonth) : ^{ return [TDADateFormatter formatDateForMonthRange:date]; },
-       @(TDADateRangeDetectorNextMonth) : ^{ return [TDADateFormatter formatDateForMonthRange:date]; },
-       @(TDADateRangeDetectorThisYear)  : ^{ return [TDADateFormatter formatDateForYearRange:date];  },
-       @(TDADateRangeDetectorNextYear)  : ^{ return [TDADateFormatter formatDateForYearRange:date];  },
-       @(TDADateRangeDetectorFarFarAway): ^{ return @""; }, };
+    NSString*(^formatter)() =
+    [switch_(range) past:^{ return @""; }
+                   today:^{ return [TDADateFormatter formatDateForDayRange:date];   }
+                tomorrow:^{ return [TDADateFormatter formatDateForDayRange:date];   }
+                thisWeek:^{ return [TDADateFormatter formatDateForWeekRange:date];  }
+                nextWeek:^{ return [TDADateFormatter formatDateForWeekRange:date];  }
+               thisMonth:^{ return [TDADateFormatter formatDateForMonthRange:date]; }
+               nextMonth:^{ return [TDADateFormatter formatDateForMonthRange:date]; }
+                thisYear:^{ return [TDADateFormatter formatDateForYearRange:date];  }
+                nextYear:^{ return [TDADateFormatter formatDateForYearRange:date];  }
+                 farAway:^{ return @""; }];
     
-    NSString*(^formatter)() = formatterMap[@(range)];
     NSAssert(formatter != nil, @"Unknown range");
     
     return formatter();

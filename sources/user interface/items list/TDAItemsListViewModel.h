@@ -9,7 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @class TDANewItemViewModel;
+@class TDAItemsList;
 @interface TDAItemsListViewModel : NSObject
+
++ (instancetype)newWithItemList:(TDAItemsList*)itemList;
 
 @property (nonatomic, readonly) NSArray* itemGroups;
 

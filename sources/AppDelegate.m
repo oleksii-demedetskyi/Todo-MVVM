@@ -7,16 +7,16 @@
 //
 
 #import "AppDelegate.h"
-
-@interface AppDelegate ()
-
-@end
+#import "TDAApplicationSetup.h"
 
 @implementation AppDelegate
-
+@synthesize window;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [TDAApplicationSetup setupApplicationInWindow:window];
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

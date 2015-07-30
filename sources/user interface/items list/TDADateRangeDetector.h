@@ -23,6 +23,26 @@ typedef NS_ENUM(NSInteger, TDADateRangeDetectorResult) {
     TDADateRangeDetectorFarFarAway,
 };
 
+#define case(name_) name_:(id)name_##Value
+@protocol TDADateRangeDetectorSwitch
+
+- (id)
+case(past)
+case(today)
+case(tomorrow)
+case(thisWeek)
+case(nextWeek)
+case(thisMonth)
+case(nextMonth)
+case(thisYear)
+case(nextYear)
+case(farAway);
+
+@end
+#undef case
+
+id<TDADateRangeDetectorSwitch> switch_(TDADateRangeDetectorResult range);
+
 @interface TDADateRangeDetector : NSObject
 
 + (TDADateRangeDetectorResult)rangeOfDate:(NSDate*)date relativeToDate:(NSDate*)date;

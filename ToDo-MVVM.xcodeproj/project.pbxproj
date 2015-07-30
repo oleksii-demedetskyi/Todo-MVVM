@@ -24,6 +24,7 @@
 		4898EF881B69800400CF2BC1 /* TDANewItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4898EF871B69800400CF2BC1 /* TDANewItemViewController.m */; };
 		4898EF8B1B69801000CF2BC1 /* TDANewItemViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4898EF8A1B69801000CF2BC1 /* TDANewItemViewModel.m */; };
 		4898EF8E1B69888100CF2BC1 /* TDADateRangeFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4898EF8D1B69888100CF2BC1 /* TDADateRangeFormatter.m */; };
+		4898EF911B6A15DF00CF2BC1 /* TDAApplicationSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4898EF901B6A15DF00CF2BC1 /* TDAApplicationSetup.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		4898EF8A1B69801000CF2BC1 /* TDANewItemViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDANewItemViewModel.m; sourceTree = "<group>"; };
 		4898EF8C1B69888100CF2BC1 /* TDADateRangeFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDADateRangeFormatter.h; sourceTree = "<group>"; };
 		4898EF8D1B69888100CF2BC1 /* TDADateRangeFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDADateRangeFormatter.m; sourceTree = "<group>"; };
+		4898EF8F1B6A15DF00CF2BC1 /* TDAApplicationSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDAApplicationSetup.h; sourceTree = "<group>"; };
+		4898EF901B6A15DF00CF2BC1 /* TDAApplicationSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDAApplicationSetup.m; sourceTree = "<group>"; };
 		D9F4FDF18BFA7535ADC38D76 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDFA7F3A6A396450B3928CAA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "external/Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,6 +133,8 @@
 				4848D19C1B4FBF8F000CA704 /* user interface */,
 				4848D1881B4FBDC6000CA704 /* AppDelegate.h */,
 				4848D1891B4FBDC6000CA704 /* AppDelegate.m */,
+				4898EF8F1B6A15DF00CF2BC1 /* TDAApplicationSetup.h */,
+				4898EF901B6A15DF00CF2BC1 /* TDAApplicationSetup.m */,
 			);
 			path = sources;
 			sourceTree = "<group>";
@@ -363,6 +368,7 @@
 				4848D1901B4FBDC6000CA704 /* AppDelegate.m in Sources */,
 				4898EF7F1B69087F00CF2BC1 /* TDADateRangeDetector.m in Sources */,
 				4848D1AA1B4FE95C000CA704 /* TDAItemsListViewController.m in Sources */,
+				4898EF911B6A15DF00CF2BC1 /* TDAApplicationSetup.m in Sources */,
 				4898EF881B69800400CF2BC1 /* TDANewItemViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

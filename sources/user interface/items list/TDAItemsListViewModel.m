@@ -71,7 +71,7 @@ typedef void(^StateBlock)(id self);
 
 @implementation TDAItemsListViewModel
 
-+ (instancetype)newWithItemsList:(TDAItemsList*)itemsList;
++ (instancetype)newWithItemList:(TDAItemsList*)itemsList;
 {
     return [self newWithState:^(TDAItemsListViewModel* self) {
         self.itemsList = itemsList;
@@ -103,7 +103,7 @@ typedef void(^StateBlock)(id self);
     
     
     NSMutableArray* groups = [NSMutableArray new];
-    void(^appendGroupForResult)(TDADateRangeDetectorResult) = ^(TDADateRangeDetectorResult range) {
+    void(^appendGroupForRange)(TDADateRangeDetectorResult) = ^(TDADateRangeDetectorResult range) {
         NSArray* items = [itemGroupMap[@(range)] copy];
         if (items.count == 0) return;
         
@@ -121,37 +121,24 @@ typedef void(^StateBlock)(id self);
         [groups addObject:groupViewModel];
     };
     
-    appendGroupForResult(TDADateRangeDetectorPast);
-    appendGroupForResult(TDADateRangeDetectorToday);
-    appendGroupForResult(TDADateRangeDetectorTomorrow);
-    appendGroupForResult(TDADateRangeDetectorThisWeek);
-    appendGroupForResult(TDADateRangeDetectorNextWeek);
-    appendGroupForResult(TDADateRangeDetectorThisMonth);
-    appendGroupForResult(TDADateRangeDetectorNextMonth);
-    appendGroupForResult(TDADateRangeDetectorThisYear);
-    appendGroupForResult(TDADateRangeDetectorNextYear);
-    appendGroupForResult(TDADateRangeDetectorFarFarAway);
+    static const TDADateRangeDetectorResult order[] = {
+        TDADateRangeDetectorPast,
+        TDADateRangeDetectorToday,
+        TDADateRangeDetectorTomorrow,
+        TDADateRangeDetectorThisWeek,
+        TDADateRangeDetectorNextWeek,
+        TDADateRangeDetectorThisMonth,
+        TDADateRangeDetectorNextMonth,
+        TDADateRangeDetectorThisYear,
+        TDADateRangeDetectorNextYear,
+        TDADateRangeDetectorFarFarAway
+    };
+    
+    for (int i = 0; i < sizeof(order)/sizeof(order[0]); i++) {
+        appendGroupForRange(order[i]);
+    }
     
     self.itemGroups = groups.copy;
-}
-
-- (id)awakeAfterUsingCoder:(NSCoder *)aDecoder
-{
-    return [TDAItemsListViewModel testViewModel];
-}
-
-+ (instancetype)testViewModel
-{
-    TDAItemsList* list = [TDAItemsList new];
-    
-    [list addItemWithTitle:@"Buy a milk" dueDate:[NSDate date]];
-    [list addItemWithTitle:@"Send a very important mail to customer" dueDate:[NSDate date]];
-    [list addItemWithTitle:@"Check this first" dueDate:[NSDate date]];
-    
-    [list addItemWithTitle:@"Write an Osmoms lib" dueDate:[NSDate date]];
-    [list addItemWithTitle:@"Complete Witcher quest" dueDate:nil];
-    
-    return [TDAItemsListViewModel newWithItemsList:list];
 }
 
 - (TDANewItemViewModel *)viewModelForNewItem

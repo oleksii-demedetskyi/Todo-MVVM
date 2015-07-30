@@ -8,7 +8,7 @@
         <!--MVVM TODO-->
         <scene sceneID="wcm-Hg-xce">
             <objects>
-                <tableViewController title="MVVM TODO" id="RjB-sz-TCu" customClass="TDAItemsListViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="item list" title="MVVM TODO" id="RjB-sz-TCu" customClass="TDAItemsListViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="63" sectionHeaderHeight="10" sectionFooterHeight="10" id="cCf-A3-MF7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,8 +65,8 @@
         <!--Navigation Controller-->
         <scene sceneID="0Il-nB-Kga">
             <objects>
-                <navigationController id="bMs-2p-gPV" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5h2-kv-vFS">
+                <navigationController storyboardIdentifier="new item container" id="bMs-2p-gPV" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="5h2-kv-vFS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -78,12 +78,12 @@
             </objects>
             <point key="canvasLocation" x="1016" y="346"/>
         </scene>
-        <!--New Item View Controller-->
+        <!--Add new Item-->
         <scene sceneID="Y6d-0V-djh">
             <objects>
-                <tableViewController id="jdS-Pd-NBY" customClass="TDANewItemViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="new item" id="jdS-Pd-NBY" customClass="TDANewItemViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="ybe-I4-KLO">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
@@ -168,7 +168,7 @@
                             <outlet property="delegate" destination="jdS-Pd-NBY" id="TjD-ks-lfT"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="e9w-5f-6jf">
+                    <navigationItem key="navigationItem" title="Add new Item" id="e9w-5f-6jf">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="CNm-as-sr6">
                             <connections>
                                 <action selector="cancel" destination="jdS-Pd-NBY" id="F8i-CU-3en"/>
@@ -195,14 +195,11 @@
         <!--Navigation Controller-->
         <scene sceneID="rdF-lC-czC">
             <objects>
-                <navigationController id="TZf-ym-E5A" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SeB-i1-IFZ">
+                <navigationController storyboardIdentifier="item list container" id="TZf-ym-E5A" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="SeB-i1-IFZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="u4p-js-gii">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
                     <connections>
                         <segue destination="RjB-sz-TCu" kind="relationship" relationship="rootViewController" id="NUl-TX-5Dl"/>
                     </connections>
