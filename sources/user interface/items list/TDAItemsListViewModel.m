@@ -37,6 +37,7 @@
 @interface TDAItemsListItemViewModel ()
 
 @property (nonatomic, strong) NSString* dueTitle;
+@property (nonatomic, strong) TDAItemsList* itemList;
 @property (nonatomic, strong) TDAItem* item;
 
 @end
@@ -76,6 +77,10 @@ typedef void(^StateBlock)(id self);
     return [self newWithState:^(TDAItemsListViewModel* self) {
         self.itemsList = itemsList;
         [self rac_liftSelector:@selector(updateGroupsFromItems:) withSignals:RACObserve(self, itemsList.items).logAll, nil];
+        
+        RAC(self, canEditItems) = [RACObserve(self, itemGroups) map:^id(NSArray* value) {
+            return @(value.count != 0);
+        }];
     }];
 }
 
@@ -114,6 +119,7 @@ typedef void(^StateBlock)(id self);
             TDAItemsListItemViewModel* itemViewModel = [TDAItemsListItemViewModel new];
             itemViewModel.item = item;
             itemViewModel.dueTitle = [TDADateFormatter formatDate:item.dueDate forRange:range];
+            itemViewModel.itemList = self.itemsList;
             return itemViewModel;
             
         }].array;
@@ -160,6 +166,11 @@ typedef void(^StateBlock)(id self);
     } else {
         [self.item markAsDone];
     }
+}
+
+- (void)removeItem
+{
+    [self.itemList removeItem:self.item];
 }
 
 + (NSSet *)keyPathsForValuesAffectingIsChecked

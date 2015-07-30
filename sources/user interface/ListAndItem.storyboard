@@ -9,12 +9,12 @@
         <scene sceneID="wcm-Hg-xce">
             <objects>
                 <tableViewController storyboardIdentifier="item list" title="MVVM TODO" id="RjB-sz-TCu" customClass="TDAItemsListViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="63" sectionHeaderHeight="10" sectionFooterHeight="10" id="cCf-A3-MF7">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="63" sectionHeaderHeight="10" sectionFooterHeight="10" id="cCf-A3-MF7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="com.itemslist.cell" textLabel="Rna-Ti-5QT" detailTextLabel="8fu-lV-YI6" imageView="D6E-P1-Ab1" style="IBUITableViewCellStyleValue1" id="1dC-u3-Qrn" customClass="TDAItemsListItemCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="com.itemslist.cell" editingAccessoryType="disclosureIndicator" textLabel="Rna-Ti-5QT" detailTextLabel="8fu-lV-YI6" imageView="D6E-P1-Ab1" style="IBUITableViewCellStyleValue1" id="1dC-u3-Qrn" customClass="TDAItemsListItemCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1dC-u3-Qrn" id="Qbq-fe-rGQ">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -54,11 +54,21 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="viewModel" destination="xpq-eG-Jxh" id="Hci-Hd-nGj"/>
+                        <outlet property="doneItem" destination="8Rh-vJ-CCd" id="YDT-jC-EuE"/>
+                        <outlet property="editItem" destination="rAl-ab-NcR" id="DCg-X0-LaE"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7DU-hD-9nE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="xpq-eG-Jxh" customClass="TDAItemsListViewModel"/>
+                <barButtonItem systemItem="edit" id="rAl-ab-NcR">
+                    <connections>
+                        <action selector="editItems:" destination="RjB-sz-TCu" id="ONg-8G-DoR"/>
+                    </connections>
+                </barButtonItem>
+                <barButtonItem style="done" systemItem="done" id="8Rh-vJ-CCd">
+                    <connections>
+                        <action selector="doneEditing:" destination="RjB-sz-TCu" id="iZb-jW-eiY"/>
+                    </connections>
+                </barButtonItem>
             </objects>
             <point key="canvasLocation" x="539" y="346"/>
         </scene>

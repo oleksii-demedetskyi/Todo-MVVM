@@ -23,4 +23,11 @@
     self.items = [(self.items ?: @[]) arrayByAddingObject:item];
 }
 
+- (void)removeItem:(TDAItem *)item
+{
+    NSMutableArray* items = self.items.mutableCopy;
+    [items removeObject:item];
+    self.items = items.copy;
+}
+
 @end

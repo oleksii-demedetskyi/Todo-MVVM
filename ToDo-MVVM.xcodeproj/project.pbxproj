@@ -129,7 +129,6 @@
 			isa = PBXGroup;
 			children = (
 				4848D19A1B4FBF8F000CA704 /* core */,
-				4848D19B1B4FBF8F000CA704 /* network */,
 				4848D19C1B4FBF8F000CA704 /* user interface */,
 				4848D1881B4FBDC6000CA704 /* AppDelegate.h */,
 				4848D1891B4FBDC6000CA704 /* AppDelegate.m */,
@@ -168,13 +167,6 @@
 				4848D1A31B4FD648000CA704 /* TDAItemsList.m */,
 			);
 			path = core;
-			sourceTree = "<group>";
-		};
-		4848D19B1B4FBF8F000CA704 /* network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = network;
 			sourceTree = "<group>";
 		};
 		4848D19C1B4FBF8F000CA704 /* user interface */ = {

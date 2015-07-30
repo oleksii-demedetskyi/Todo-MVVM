@@ -44,12 +44,35 @@
 
 @end
 
+@interface TDAItemsListViewController ()
+
+@property (nonatomic) IBOutlet UIBarButtonItem* editItem;
+@property (nonatomic) IBOutlet UIBarButtonItem* doneItem;
+
+@end
+
 @implementation TDAItemsListViewController
+
+- (IBAction)editItems:(UIBarButtonItem*)item
+{
+    [self.tableView setEditing:YES animated:YES];
+    [self.navigationItem setLeftBarButtonItem:self.doneItem animated:YES];
+}
+
+- (IBAction)doneEditing:(UIBarButtonItem*)item
+{
+    [self.tableView setEditing:NO animated:YES];
+    [self.navigationItem setLeftBarButtonItem:self.editItem animated:YES];
+}
 
 - (void)viewDidLoad
 {
     [self.tableView rac_liftSelector:@selector(reloadData)
                withSignalOfArguments:[RACObserve(self, viewModel.itemGroups) mapReplace:[RACTuple new]]];
+    
+    [self.navigationItem setLeftBarButtonItem:self.editItem animated:NO];
+    
+    RAC(self, editItem.enabled, @NO) = RACObserve(self, viewModel.canEditItems);
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -76,7 +99,6 @@
     
     TDAItemsListItemCell* cell = [tableView dequeueReusableCellWithIdentifier:@"com.itemslist.cell" forIndexPath:indexPath];
     cell.viewModel = item;
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
 }
@@ -85,8 +107,22 @@
 {
     TDAItemsListGroupViewModel* group = self.viewModel.itemGroups[indexPath.section];
     TDAItemsListItemViewModel* item = group.items[indexPath.row];
+    
+    if (tableView.editing) {
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    }
+    else {
+        [item select];
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    }
+}
 
-    [item select];
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    TDAItemsListGroupViewModel* group = self.viewModel.itemGroups[indexPath.section];
+    TDAItemsListItemViewModel* item = group.items[indexPath.row];
+    
+    [item removeItem];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

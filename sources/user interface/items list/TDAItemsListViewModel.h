@@ -16,6 +16,8 @@
 
 @property (nonatomic, readonly) NSArray* itemGroups;
 
+@property (nonatomic) BOOL canEditItems;
+
 - (TDANewItemViewModel*)viewModelForNewItem;
 
 @end
@@ -35,5 +37,7 @@
 @property (nonatomic, readonly) NSString* dueTitle;
 
 - (void)select;
+
+- (void)removeItem;
 
 @end
